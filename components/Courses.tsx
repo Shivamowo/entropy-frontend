@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useMounted } from "@/hooks/useMounted";
 
 const courses = [
   {
@@ -37,6 +38,8 @@ const courses = [
 ];
 
 export function Courses() {
+  const mounted = useMounted();
+
   return (
     <section
       id="courses"
@@ -58,42 +61,44 @@ export function Courses() {
           {courses.map((c, i) => (
             <motion.article
               key={c.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={false}
+              whileInView={mounted ? { opacity: 1, y: 0 } : undefined}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -4, scale: 1.01 }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white p-7 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)] transition hover:shadow-[0_26px_64px_-38px_rgba(31,26,43,0.3)]"
+              whileHover={{ y: -6, scale: 1.012 }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl p-[1px] shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)] transition hover:shadow-[0_30px_70px_-42px_rgba(109,40,217,0.38)]"
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#C4B5FD]" />
-              <div className="pointer-events-none absolute -right-24 -top-24 size-56 rounded-full bg-[#A78BFA]/25 blur-3xl transition-opacity group-hover:opacity-90" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#6D28D9]/35 via-[#C4B5FD]/35 to-[#8B5CF6]/35 opacity-80" />
+              <div className="relative flex h-full flex-col rounded-[15px] bg-white p-7">
+                <div className="pointer-events-none absolute -right-24 -top-24 size-56 rounded-full bg-[#A78BFA]/25 blur-3xl transition-opacity group-hover:opacity-90" />
 
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-extrabold leading-snug text-[#1F1A2B] sm:text-2xl">
-                  {c.title}
-                </h3>
-                <ArrowUpRight
-                  className="size-6 shrink-0 text-[#6A6280] transition group-hover:text-[#6D28D9]"
-                  strokeWidth={2.5}
-                />
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-[family-name:var(--font-poppins)] text-xl font-extrabold leading-snug text-[#1F1A2B] sm:text-2xl">
+                    {c.title}
+                  </h3>
+                  <ArrowUpRight
+                    className="size-6 shrink-0 text-[#6A6280] transition group-hover:text-[#6D28D9]"
+                    strokeWidth={2.5}
+                  />
+                </div>
+                <p className="mt-5 flex-1 text-base leading-relaxed text-[#4B445F]">{c.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {c.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-[#6D28D9]/15 bg-[#6D28D9]/5 px-3 py-1 text-xs font-semibold tracking-wide text-[#6D28D9]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-[#6D28D9] py-3.5 text-sm font-bold text-white shadow-[0_16px_34px_-22px_rgba(109,40,217,0.6)] transition hover:translate-y-[-1px] hover:shadow-[0_20px_42px_-26px_rgba(109,40,217,0.65)]"
+                >
+                  Explore
+                </a>
               </div>
-              <p className="mt-5 flex-1 text-base leading-relaxed text-[#4B445F]">{c.description}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {c.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-[#6D28D9]/15 bg-[#6D28D9]/5 px-3 py-1 text-xs font-semibold tracking-wide text-[#6D28D9]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-[#6D28D9] py-3.5 text-sm font-bold text-white shadow-[0_16px_34px_-22px_rgba(109,40,217,0.6)] transition hover:translate-y-[-1px] hover:shadow-[0_20px_42px_-26px_rgba(109,40,217,0.65)]"
-              >
-                Explore
-              </a>
             </motion.article>
           ))}
         </div>

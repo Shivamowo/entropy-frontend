@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { useMounted } from "@/hooks/useMounted";
 
 const testimonials = [
   {
@@ -36,6 +37,8 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const mounted = useMounted();
+
   return (
     <section
       id="results"
@@ -58,17 +61,20 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.figure
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={false}
+              whileInView={mounted ? { opacity: 1, y: 0 } : undefined}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.06 }}
-              className="relative overflow-hidden rounded-2xl border border-black/5 bg-white p-8 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)]"
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="relative overflow-hidden rounded-2xl border border-white/50 bg-white/55 p-8 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)] backdrop-blur-xl"
             >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ffffff]/60 via-white/25 to-[#C4B5FD]/25" />
+              <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[#A78BFA]/20 blur-3xl" />
               <Quote
-                className="absolute right-6 top-6 size-12 text-[#6D28D9]/15"
+                className="absolute right-6 top-6 size-12 text-[#6D28D9]/18"
                 strokeWidth={1.5}
               />
-              <div className="flex gap-5">
+              <div className="relative flex gap-5">
                 <div className="relative size-[72px] shrink-0 overflow-hidden rounded-2xl border border-black/10 shadow-sm">
                   <Image
                     src={t.image}

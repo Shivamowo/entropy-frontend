@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useMounted } from "@/hooks/useMounted";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -13,12 +14,13 @@ const links = [
 ];
 
 export function Navbar() {
+  const mounted = useMounted();
   const [open, setOpen] = useState(false);
 
   return (
     <motion.header
-      initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={false}
+      animate={mounted ? { y: 0, opacity: 1 } : { y: -10, opacity: 1 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-50 border-b border-black/5 bg-[#F5F1EB]/80 backdrop-blur-xl"
     >
@@ -62,8 +64,8 @@ export function Navbar() {
 
       {open && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
+          initial={false}
+          animate={mounted ? { opacity: 1, height: "auto" } : { opacity: 1, height: "auto" }}
           className="border-t border-black/5 bg-[#F5F1EB] md:hidden"
         >
           <div className="flex flex-col gap-1 px-4 py-5">

@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMounted } from "@/hooks/useMounted";
 
 export function About() {
+  const mounted = useMounted();
+
   return (
     <section
       id="about"
@@ -13,8 +16,8 @@ export function About() {
 
       <div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-2 lg:items-center lg:gap-20">
         <motion.div
-          initial={{ opacity: 0, x: -28 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={false}
+          whileInView={mounted ? { opacity: 1, x: 0 } : undefined}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.55 }}
         >
@@ -48,8 +51,8 @@ export function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 28 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={false}
+          whileInView={mounted ? { opacity: 1, x: 0 } : undefined}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.55 }}
           className="relative"

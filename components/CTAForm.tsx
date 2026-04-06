@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { useMounted } from "@/hooks/useMounted";
 
 const courseOptions = [
   "JEE (Main + Advanced)",
@@ -13,6 +14,7 @@ const courseOptions = [
 ];
 
 export function CTAForm() {
+  const mounted = useMounted();
   const [status, setStatus] = useState<"idle" | "sent">("idle");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -33,8 +35,8 @@ export function CTAForm() {
 
       <div className="relative mx-auto max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={false}
+          whileInView={mounted ? { opacity: 1, y: 0 } : undefined}
           viewport={{ once: true }}
           className="text-center"
         >
@@ -50,8 +52,8 @@ export function CTAForm() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={false}
+          whileInView={mounted ? { opacity: 1, y: 0 } : undefined}
           viewport={{ once: true }}
           transition={{ delay: 0.08 }}
           className="mt-12 overflow-hidden rounded-[1.5rem] border border-black/5 bg-white shadow-[0_24px_70px_-40px_rgba(31,26,43,0.35)] sm:p-0"
@@ -128,13 +130,15 @@ export function CTAForm() {
                   </select>
                 </div>
               </div>
-              <button
+              <motion.button
                 type="submit"
-                className="flex w-full min-h-[56px] items-center justify-center gap-3 rounded-xl bg-[#6D28D9] py-4 text-base font-bold text-white shadow-[0_18px_40px_-26px_rgba(109,40,217,0.65)] transition hover:translate-y-[-1px] hover:shadow-[0_22px_48px_-28px_rgba(109,40,217,0.7)]"
+                whileHover={{ y: -1, scale: 1.005 }}
+                whileTap={{ scale: 0.995 }}
+                className="cta-pulse flex w-full min-h-[56px] items-center justify-center gap-3 rounded-xl bg-[#6D28D9] py-4 text-base font-bold text-white transition"
               >
                 Request a callback
                 <Send className="size-5" strokeWidth={2.25} />
-              </button>
+              </motion.button>
               <p className="text-center text-xs font-medium text-[#6A6280]">
                 Response within one working day.
               </p>

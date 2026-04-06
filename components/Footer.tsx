@@ -1,3 +1,5 @@
+"use client";
+
 function YoutubeIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -42,6 +44,7 @@ const socialLinkClass =
   "inline-flex rounded-lg border border-black/10 bg-white px-2.5 py-2 text-[#6A6280] shadow-sm transition hover:-translate-y-0.5 hover:text-[#6D28D9]";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer className="border-t border-black/5 bg-[#F5F1EB] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
@@ -128,7 +131,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-16 max-w-6xl border-t border-black/5 pt-10 text-center text-xs font-medium text-[#6A6280]">
-        © {new Date().getFullYear()} Entropy Classes. All rights reserved.
+        © {year} Entropy Classes. All rights reserved.
       </div>
     </footer>
   );

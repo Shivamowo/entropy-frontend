@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMounted } from "@/hooks/useMounted";
 
 export function Hero() {
+  const mounted = useMounted();
+
   return (
     <section
       id="home"
@@ -18,8 +21,8 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={false}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 1, y: 10 }}
             transition={{ duration: 0.4 }}
             className="inline-flex items-center rounded-full border border-[#6D28D9]/20 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6D28D9] shadow-sm sm:text-xs"
           >
@@ -27,8 +30,8 @@ export function Hero() {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={false}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 1, y: 14 }}
             transition={{ duration: 0.45, delay: 0.05 }}
             className="mt-8 font-[family-name:var(--font-poppins)] text-[2.125rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1F1A2B] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
           >
@@ -40,8 +43,8 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={false}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 1, y: 12 }}
             transition={{ duration: 0.4, delay: 0.12 }}
             className="mt-7 max-w-xl text-lg font-medium leading-relaxed text-[#3A3350] sm:text-xl"
           >
@@ -50,8 +53,8 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={false}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 1, y: 12 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
           >
@@ -70,7 +73,7 @@ export function Hero() {
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
             className="mt-8 text-sm font-medium text-[#6A6280]"
@@ -80,8 +83,8 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={false}
+          animate={mounted ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="relative mx-auto w-full max-w-lg lg:max-w-none"
         >
