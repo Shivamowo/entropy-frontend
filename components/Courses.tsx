@@ -40,15 +40,15 @@ export function Courses() {
   return (
     <section
       id="courses"
-      className="border-b border-white/[0.12] bg-[#0F172A] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
+      className="border-b border-black/5 bg-[#FBF7F2] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6B00]">Programs</p>
-          <h2 className="mt-5 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#6D28D9]">Programs</p>
+          <h2 className="mt-5 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-[#1F1A2B] sm:text-4xl lg:text-5xl">
             Courses built for serious rankers
           </h2>
-          <p className="mt-6 text-lg font-medium text-slate-400 sm:text-xl">
+          <p className="mt-6 text-lg font-medium text-[#4B445F] sm:text-xl">
             Pick your track—expert faculty, structured content, and relentless practice. Same Entropy
             rigour, tailored to your goal.
           </p>
@@ -63,20 +63,26 @@ export function Courses() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.05 }}
               whileHover={{ y: -4, scale: 1.01 }}
-              className="group relative flex flex-col rounded-2xl border border-white/[0.12] bg-[#020617] p-7 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.9)] transition hover:border-[#FF6B00]/55 hover:shadow-[0_0_0_1px_rgba(255,107,0,0.25),0_28px_70px_-24px_rgba(255,107,0,0.2)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white p-7 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)] transition hover:shadow-[0_26px_64px_-38px_rgba(31,26,43,0.3)]"
             >
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#C4B5FD]" />
+              <div className="pointer-events-none absolute -right-24 -top-24 size-56 rounded-full bg-[#A78BFA]/25 blur-3xl transition-opacity group-hover:opacity-90" />
+
               <div className="flex items-start justify-between gap-3">
-                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-extrabold leading-snug text-white sm:text-2xl">
+                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-extrabold leading-snug text-[#1F1A2B] sm:text-2xl">
                   {c.title}
                 </h3>
-                <ArrowUpRight className="size-6 shrink-0 text-slate-500 transition group-hover:text-[#FF6B00]" strokeWidth={2.5} />
+                <ArrowUpRight
+                  className="size-6 shrink-0 text-[#6A6280] transition group-hover:text-[#6D28D9]"
+                  strokeWidth={2.5}
+                />
               </div>
-              <p className="mt-5 flex-1 text-base leading-relaxed text-slate-400">{c.description}</p>
+              <p className="mt-5 flex-1 text-base leading-relaxed text-[#4B445F]">{c.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {c.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-[#FF6B00]/40 bg-[#FF6B00]/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#FFC9A0]"
+                    className="rounded-full border border-[#6D28D9]/15 bg-[#6D28D9]/5 px-3 py-1 text-xs font-semibold tracking-wide text-[#6D28D9]"
                   >
                     {t}
                   </span>
@@ -84,9 +90,9 @@ export function Courses() {
               </div>
               <a
                 href="#contact"
-                className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-[#FF6B00] py-3.5 text-sm font-extrabold uppercase tracking-wide text-white shadow-[0_8px_28px_-8px_rgba(255,107,0,0.7)] transition hover:bg-[#ff7a1a] hover:shadow-[0_12px_36px_-6px_rgba(255,107,0,0.85)]"
+                className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-[#6D28D9] py-3.5 text-sm font-bold text-white shadow-[0_16px_34px_-22px_rgba(109,40,217,0.6)] transition hover:translate-y-[-1px] hover:shadow-[0_20px_42px_-26px_rgba(109,40,217,0.65)]"
               >
-                Explore &amp; enroll
+                Explore
               </a>
             </motion.article>
           ))}

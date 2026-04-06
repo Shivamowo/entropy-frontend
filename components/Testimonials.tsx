@@ -39,18 +39,18 @@ export function Testimonials() {
   return (
     <section
       id="results"
-      className="border-b border-white/[0.12] bg-[#020617] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
+      className="border-b border-black/5 bg-[#F5F1EB] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6B00]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#6D28D9]">
             Results & voices
           </p>
-          <h2 className="mt-5 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-[#1F1A2B] sm:text-4xl lg:text-5xl">
             Trusted by aspirants who play the long game
           </h2>
-          <p className="mt-6 text-lg font-medium text-slate-400 sm:text-xl">
-            Real feedback—focused prep, expert mentorship, and a culture that pushes you forward.
+          <p className="mt-6 text-lg font-medium text-[#4B445F] sm:text-xl">
+            Trust comes from consistency: clear teaching, patient support, and honest evaluation.
           </p>
         </div>
 
@@ -62,14 +62,14 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.06 }}
-              className="relative overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0F172A] p-8 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)]"
+              className="relative overflow-hidden rounded-2xl border border-black/5 bg-white p-8 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)]"
             >
               <Quote
-                className="absolute right-6 top-6 size-12 text-[#FF6B00]/30"
+                className="absolute right-6 top-6 size-12 text-[#6D28D9]/15"
                 strokeWidth={1.5}
               />
               <div className="flex gap-5">
-                <div className="relative size-[72px] shrink-0 overflow-hidden rounded-2xl border-2 border-[#FF6B00]/35 shadow-lg shadow-black/40">
+                <div className="relative size-[72px] shrink-0 overflow-hidden rounded-2xl border border-black/10 shadow-sm">
                   <Image
                     src={t.image}
                     alt={t.name}
@@ -79,15 +79,15 @@ export function Testimonials() {
                   />
                 </div>
                 <div className="min-w-0 pt-1">
-                  <figcaption className="font-[family-name:var(--font-poppins)] text-lg font-extrabold text-white">
+                  <figcaption className="font-[family-name:var(--font-poppins)] text-lg font-extrabold text-[#1F1A2B]">
                     {t.name}
                   </figcaption>
-                  <p className="mt-1 text-sm font-bold uppercase tracking-wide text-[#FF6B00]">
+                  <p className="mt-1 text-sm font-semibold tracking-wide text-[#6D28D9]">
                     {t.result}
                   </p>
                 </div>
               </div>
-              <blockquote className="relative mt-6 border-l-2 border-[#FF6B00]/40 pl-5 text-base font-medium leading-relaxed text-slate-300">
+              <blockquote className="relative mt-6 border-l-2 border-[#6D28D9]/20 pl-5 text-base font-medium leading-relaxed text-[#3A3350]">
                 “{t.quote}”
               </blockquote>
             </motion.figure>

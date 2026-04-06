@@ -20,14 +20,14 @@ export function Navbar() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky top-0 z-50 border-b border-white/[0.12] bg-[#020617]/90 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.85)] backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-black/5 bg-[#F5F1EB]/80 backdrop-blur-xl"
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <a
           href="#home"
-          className="font-[family-name:var(--font-poppins)] text-xl font-extrabold tracking-tight text-white sm:text-2xl"
+          className="font-[family-name:var(--font-poppins)] text-xl font-extrabold tracking-tight text-[#1F1A2B] sm:text-2xl"
         >
-          Entropy <span className="text-[#FF6B00]">Classes</span>
+          Entropy <span className="text-[#6D28D9]">Classes</span>
         </a>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -35,7 +35,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[15px] font-semibold text-slate-200 transition hover:text-white"
+              className="text-[15px] font-semibold text-[#3A3350] transition hover:text-[#1F1A2B]"
             >
               {l.label}
             </a>
@@ -45,13 +45,13 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden min-h-[44px] items-center rounded-xl bg-[#FF6B00] px-6 py-2.5 text-sm font-extrabold uppercase tracking-wide text-white shadow-[0_0_32px_-4px_rgba(255,107,0,0.65)] ring-2 ring-[#FF6B00] ring-offset-2 ring-offset-[#020617] transition hover:scale-[1.04] hover:shadow-[0_0_40px_0_rgba(255,107,0,0.55)] md:inline-flex"
+            className="hidden min-h-[44px] items-center rounded-xl bg-[#6D28D9] px-6 py-2.5 text-sm font-bold text-white shadow-[0_14px_30px_-18px_rgba(109,40,217,0.55)] transition hover:translate-y-[-1px] hover:shadow-[0_18px_38px_-20px_rgba(109,40,217,0.6)] md:inline-flex"
           >
-            Enroll now
+            Enroll Now
           </a>
           <button
             type="button"
-            className="inline-flex rounded-lg p-2 text-slate-200 md:hidden"
+            className="inline-flex rounded-lg p-2 text-[#3A3350] md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -64,14 +64,14 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="border-t border-white/10 bg-[#020617] md:hidden"
+          className="border-t border-black/5 bg-[#F5F1EB] md:hidden"
         >
           <div className="flex flex-col gap-1 px-4 py-5">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3 py-3 text-base font-semibold text-slate-100 hover:bg-white/5"
+                className="rounded-lg px-3 py-3 text-base font-semibold text-[#1F1A2B] hover:bg-black/[0.04]"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
@@ -79,10 +79,10 @@ export function Navbar() {
             ))}
             <a
               href="#contact"
-              className="mt-3 flex min-h-[52px] items-center justify-center rounded-xl bg-[#FF6B00] text-center text-base font-extrabold uppercase tracking-wide text-white shadow-[0_0_24px_-4px_rgba(255,107,0,0.6)]"
+              className="mt-3 flex min-h-[52px] items-center justify-center rounded-xl bg-[#6D28D9] text-center text-base font-bold text-white shadow-[0_18px_40px_-26px_rgba(109,40,217,0.65)]"
               onClick={() => setOpen(false)}
             >
-              Enroll now
+              Enroll Now
             </a>
           </div>
         </motion.div>

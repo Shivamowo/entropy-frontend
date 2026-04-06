@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-[#020617] text-slate-50">{children}</body>
+      <body className="flex min-h-full flex-col bg-[#F5F1EB] text-[#1F1A2B]">{children}</body>
     </html>
   );
 }

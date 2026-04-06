@@ -39,17 +39,17 @@ const quick = [
 ];
 
 const socialLinkClass =
-  "inline-flex rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#FF6B00]/50 hover:text-[#FF6B00]";
+  "inline-flex rounded-lg border border-black/10 bg-white px-2.5 py-2 text-[#6A6280] shadow-sm transition hover:-translate-y-0.5 hover:text-[#6D28D9]";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.12] bg-[#010409] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <footer className="border-t border-black/5 bg-[#F5F1EB] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
         <div className="lg:col-span-2">
-          <p className="font-[family-name:var(--font-poppins)] text-2xl font-extrabold tracking-tight text-white">
-            Entropy <span className="text-[#FF6B00]">Classes</span>
+          <p className="font-[family-name:var(--font-poppins)] text-2xl font-extrabold tracking-tight text-[#1F1A2B]">
+            Entropy <span className="text-[#6D28D9]">Classes</span>
           </p>
-          <p className="mt-4 max-w-md text-base font-medium leading-relaxed text-slate-400">
+          <p className="mt-4 max-w-md text-base font-medium leading-relaxed text-[#4B445F]">
             Premium IIT JEE, NEET &amp; NTSE coaching in Noida—where expert faculty, structured
             programs, and a high-energy culture help you convert potential into selection.
           </p>
@@ -94,11 +94,11 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Quick links</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#6A6280]">Quick links</p>
           <ul className="mt-5 space-y-3">
             {quick.map((q) => (
               <li key={q.href}>
-                <a href={q.href} className="text-base font-semibold text-slate-300 transition hover:text-white">
+                <a href={q.href} className="text-base font-semibold text-[#3A3350] transition hover:text-[#1F1A2B]">
                   {q.label}
                 </a>
               </li>
@@ -107,8 +107,8 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Contact</p>
-          <address className="mt-5 not-italic text-base font-medium leading-relaxed text-slate-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#6A6280]">Contact</p>
+          <address className="mt-5 not-italic text-base font-medium leading-relaxed text-[#4B445F]">
             C-56/31, Sandesh Tower,
             <br />
             Sector 62, Noida,
@@ -116,18 +116,18 @@ export function Footer() {
             Uttar Pradesh 201301
             <br />
             <br />
-            <a href="tel:01203168496" className="hover:text-[#FF6B00]">
+            <a href="tel:01203168496" className="hover:text-[#6D28D9]">
               0120 316 8496
             </a>
             <br />
-            <a href="tel:+917011378386" className="hover:text-[#FF6B00]">
+            <a href="tel:+917011378386" className="hover:text-[#6D28D9]">
               +91 70113 78386
             </a>
           </address>
         </div>
       </div>
 
-      <div className="mx-auto mt-16 max-w-6xl border-t border-white/[0.08] pt-10 text-center text-xs font-semibold uppercase tracking-wider text-slate-600">
+      <div className="mx-auto mt-16 max-w-6xl border-t border-black/5 pt-10 text-center text-xs font-medium text-[#6A6280]">
         © {new Date().getFullYear()} Entropy Classes. All rights reserved.
       </div>
     </footer>

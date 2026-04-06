@@ -45,19 +45,19 @@ const item = {
 
 export function Stats() {
   return (
-    <section className="relative border-b border-white/[0.12] bg-[#0F172A] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+    <section className="relative border-b border-black/5 bg-[#FBF7F2] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
       <div className="section-divider-line pointer-events-none absolute inset-x-0 top-0" />
 
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6B00]">
-            Proof, not promises
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#6D28D9]">
+            Trusted outcomes
           </p>
-          <h2 className="mt-4 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Numbers that hit different
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] text-3xl font-extrabold tracking-tight text-[#1F1A2B] sm:text-4xl lg:text-5xl">
+            Numbers that build confidence
           </h2>
-          <p className="mt-4 text-lg font-medium text-slate-400">
-            Scale, experience, and grind—so you know you&apos;re not experimenting with your career.
+          <p className="mt-4 text-lg font-medium text-[#4B445F]">
+            A steady track record—so you feel secure about your preparation journey.
           </p>
         </div>
 
@@ -72,20 +72,22 @@ export function Stats() {
             <motion.div
               key={s.label}
               variants={item}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 420, damping: 24 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.12] bg-[#020617] pl-5 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.85)]"
+              className="group relative overflow-hidden rounded-2xl border border-black/5 bg-white p-7 shadow-[0_18px_45px_-28px_rgba(31,26,43,0.22)]"
             >
-              <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-[#FF6B00] to-red-600" />
-              <div className="p-6 pl-7 pt-7">
-                <div className="mb-5 inline-flex rounded-xl bg-[#FF6B00]/15 p-3.5 text-[#FF6B00] ring-1 ring-[#FF6B00]/40 transition group-hover:bg-[#FF6B00]/25">
-                  <s.icon className="size-7" strokeWidth={2.25} />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#C4B5FD]" />
+              <div className="flex items-start justify-between gap-4">
+                <div className="inline-flex rounded-xl bg-[#6D28D9]/10 p-3 text-[#6D28D9] ring-1 ring-[#6D28D9]/15 transition group-hover:bg-[#6D28D9]/15">
+                  <s.icon className="size-6" strokeWidth={2.25} />
                 </div>
-                <p className="font-[family-name:var(--font-poppins)] text-4xl font-black tracking-tight text-white lg:text-[2.75rem]">
+              </div>
+              <div className="mt-6">
+                <p className="font-[family-name:var(--font-poppins)] text-4xl font-extrabold tracking-tight text-[#1F1A2B]">
                   {s.value}
                 </p>
-                <p className="mt-2 text-base font-bold text-white">{s.label}</p>
-                <p className="mt-2 text-sm font-medium text-slate-500">{s.hint}</p>
+                <p className="mt-2 text-base font-semibold text-[#1F1A2B]">{s.label}</p>
+                <p className="mt-2 text-sm font-medium text-[#6A6280]">{s.hint}</p>
               </div>
             </motion.div>
           ))}
